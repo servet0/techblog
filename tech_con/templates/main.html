@@ -16,7 +16,11 @@
     <meta name="author" content="">
     
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    {% for logo in logos %}
+    {% if logo.minilogo %}
+    <link rel="shortcut icon" href="{{logo.minilogo.url}}" type="image/x-icon" />
+    {% endif %}
+    {% endfor %}
     <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
     
     <!-- Design fonts -->

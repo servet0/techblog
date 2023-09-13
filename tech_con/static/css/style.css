@@ -128,6 +128,14 @@ a {
     border-radius: 0 !important;
     padding: 2rem;
 }
+/* New Css
+*************************************/
+
+.big-text {
+    font-size: 40px; /* Büyük bir yazı tipi boyutu ayarlayın */
+    /* Diğer stil ayarları buraya eklenebilir */
+    margin-right: 40px;
+}
 
 
 /* HEADER 

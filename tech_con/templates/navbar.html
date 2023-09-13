@@ -7,12 +7,20 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             {% for logo in logos %}
-            <a class="navbar-brand" href="{% url 'home' %}"><img src="{{logo.image.url}}" alt="{{logo.tittle}}"></a>
+                {% if logo.image %}
+                    <a class="navbar-brand" href="{% url 'home' %}"><img src="{{logo.image.url}}" alt="{{logo.tittle}}">
+                {% else %}
+                <span class="big-text">{{logo.name}}</span>
+                {% endif %}
+                    </a>
+            
+            
             {% endfor %}
+
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="tech-index.html">Home</a>
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
 
                    <!--news, gadgets, rewies-->
