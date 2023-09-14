@@ -10,12 +10,20 @@ def home(request):
 
     return render(request, 'base/home.html', context)
 
-def header_detail(request, header_id, header_name):
+def header_detail(request, header_name):
     logos = Logo.objects.all()
-    header_d = Header.objects.get(id=header_id, name=header_name) 
-
+    header_d = Header.objects.get( name=header_name)
+    
     context = {'header_d':header_d, 'logos':logos}
 
     return render(request, 'base/single.html', context)
+
+def header_detail(request, header_name):
+    logos = Logo.objects.all()
+    header_d2 = Header2.objects.get(name=header_name)
+
+    context = {'header_d2':header_d2, 'logos':logos}
+
+    return render(request, 'base/single2.html', context)
 
 # Create your views here.
