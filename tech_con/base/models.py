@@ -21,6 +21,8 @@ class Header(models.Model):
 class Header2(models.Model):
     image = models.ImageField(upload_to='blog', null=True, blank=True)
     name = models.CharField(max_length=100, null=True, blank=True)
+    description = RichTextField(null=True, blank=True)
+    view = models.IntegerField(null=True, blank=True)
     date = models.DateTimeField(auto_now=True)
     available = models.BooleanField(default=True)
 

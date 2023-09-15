@@ -18,12 +18,13 @@ def header_detail(request, header_name):
 
     return render(request, 'base/single.html', context)
 
-def header_detail(request, header_name):
+def header_detail2(request, pk):
     logos = Logo.objects.all()
-    header_d2 = Header2.objects.get(name=header_name)
+    header_d2 = Header2.objects.get( name=pk)
 
     context = {'header_d2':header_d2, 'logos':logos}
 
     return render(request, 'base/single2.html', context)
+
 
 # Create your views here.
