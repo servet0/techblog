@@ -4,6 +4,24 @@
 
         <section class="section first-section">
             <div class="container-fluid">
+                <br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% for adse in adses %}
+                        {% if adse.adsheader %}
+                        <div class="banner-spot clearfix">
+                            <div class="banner-img">
+                                
+                                <img src="{{adse.adsheader.url}}" alt="" class="img-fluid">
+                                
+                            </div><!-- end banner-img -->
+                        </div><!-- end banner -->
+                        {% endif %}
+                        <br>
+                        {% endfor %}
+                    </div><!-- end col -->
+                </div><!-- end row -->
+
                 <div class="masonry-blog clearfix">
                     {% for header in headers %}
                     {% if header.image %}
@@ -58,248 +76,72 @@
         <section class="section">
             <div class="container">
                 <div class="row">
+
+                    
                     <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        
+                        <div class="row">
+                            <div class="col-lg-12">
+                                {% for adse in adses %}
+                                {% if adse.ads %}
+                                <div class="banner-spot clearfix">
+                                    <div class="banner-img">
+                                        
+                                        <img src="{{adse.ads.url}}" alt="" class="img-fluid">
+                                        
+                                    </div><!-- end banner-img -->
+                                </div><!-- end banner -->
+                                {% endif %}
+                                <br>
+                                {% endfor %}
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+
+                        <br>
+
                         <div class="page-wrapper">
-                            <div class="blog-top clearfix">
-                                <h4 class="pull-left">Recent News <a href="#"><i class="fa fa-rss"></i></a></h4>
-                            </div><!-- end blog-top -->
-
-                            <div class="blog-list clearfix">
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_blog_01.jpg' %}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
+                            <div class="blog-grid-system">
+                                <div class="row">
+                                    {% for blog in blogs %}
+                                    <div class="col-md-6">
+                                        
+                                        <div class="blog-box">
+                                            
+                                            <div class="post-media">
+                                                <a href="{% url 'singleblog' blog.pk %}" title="">
+                                                    {% if blog.image %}
+                                                    <img src="{{blog.image.url}}" alt="" class="img-fluid">
+                                                    {% endif %}
+                                                    <div class="hovereffect">
+                                                        <span></span>
+                                                    </div><!-- end hover -->
+                                                </a>
+                                            </div><!-- end media -->
+                                            <div class="blog-meta big-meta">
+                                                <!--<span class="color-orange"><a href="tech-category-01.html" title="">Gadgets</a></span>-->
+                                                <h4><a href="{% url 'singleblog' blog.name %}" title="">{{blog.name}}</a></h4>
+                                                {{ blog.description|safe|truncatechars:100 }}
+                                                <!--<small><a href="tech-single.html" title="">14 July, 2017</a></small>
+                                                <small><a href="tech-author.html" title="">by Jack</a></small>-->
+                                                <small><a href="{% url 'singleblog' blog.name %}" title=""><i class="fa fa-eye"></i> {{blog.view}}</a></small>
+                                            </div><!-- end meta -->
+                                            
+                                                        <div class="banner-img">
+                                                            {% if blog.adversimenthome %}
+                                                            <img src="{{blog.adversimenthome.url}}" alt="" class="img-fluid">
+                                                            {% endif %}
+                                                        </div><!-- end banner-img -->
+                                                    
+                                            
+                                        </div><!-- end blog-box -->
+                                        
                                     </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="tech-single.html" title="">Top 10 phone applications and 2017 mobile design awards</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Gadgets</a></small>
-                                        <small><a href="tech-single.html" title="">21 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 1114</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_blog_02.jpg' %}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="tech-single.html" title="">A device you can use both headphones and usb</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Technology</a></small>
-                                        <small><a href="tech-single.html" title="">21 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 4412</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_blog_03.jpg' %}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="tech-single.html" title="">Two brand new laptop models from ABC computer</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Development</a></small>
-                                        <small><a href="tech-single.html" title="">20 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 2313</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <!--adversiment-->
-
-                                <!--<div class="row">
-                                    <div class="col-lg-10 offset-lg-1">
-                                        <div class="banner-spot clearfix">
-                                            <div class="banner-img">
-                                                <img src="{% static 'upload/banner_02.jpg' %}" alt="" class="img-fluid">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>-->
-
-                                <!--<hr class="invis">-->
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_blog_04.jpg' %}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="tech-single.html" title="">Applications for taking photos of nature in your mobile phones</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Design</a></small>
-                                        <small><a href="tech-single.html" title="">19 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 4441</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_blog_05.jpg' %}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="tech-single.html" title="">Say hello to colored strap models in smart hours</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Materials</a></small>
-                                        <small><a href="tech-single.html" title="">18 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 33312</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_blog_06.jpg' %}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="tech-single.html" title="">How about evaluating your old mobile phones in different ways?</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Gadgets</a></small>
-                                        <small><a href="tech-single.html" title="">17 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 4440</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_blog_07.jpg' %}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="tech-single.html" title="">Drinking coffee at the computer rests the spirit</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Technology</a></small>
-                                        <small><a href="tech-single.html" title="">16 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 4412</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_blog_08.jpg' %}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="tech-single.html" title="">If you are considering buying a new safe for your mobile phone, be sure to read this article</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Reviews</a></small>
-                                        <small><a href="tech-single.html" title="">15 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 44123</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_blog_09.jpg' %}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="tech-single.html" title="">Enjoy a summer with a colorful headset</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Technology</a></small>
-                                        <small><a href="tech-single.html" title="">14 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 2214</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_blog_10.jpg' %}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="tech-single.html" title="">Google has developed a brand new algorithm. Forget all your knowledge!</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Gadgets</a></small>
-                                        <small><a href="tech-single.html" title="">13 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 3331</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end blog-list -->
+                                    {% endfor %}
+                                </div><!-- end row -->
+                            </div><!-- end blog-grid-system -->
                         </div><!-- end page-wrapper -->
 
-                        <hr class="invis">
+                        <hr class="invis3">
 
                         <div class="row">
                             <div class="col-md-12">
@@ -315,21 +157,39 @@
                                 </nav>
                             </div><!-- end col -->
                         </div><!-- end row -->
+                    
+                        <div class="row">
+                            <div class="col-lg-12">
+                                {% for adse in adses %}
+                                {% if adse.ads2 %}
+                                <div class="banner-spot clearfix">
+                                    <div class="banner-img">
+                                        
+                                        <img src="{{adse.ads2.url}}" alt="" class="img-fluid">
+                                        
+                                    </div><!-- end banner-img -->
+                                </div><!-- end banner -->
+                                {% endif %}
+                                {% endfor %}
+                            </div><!-- end col -->
+                        </div><!-- end row -->
                     </div><!-- end col -->
+
+
 
                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                         <div class="sidebar">
-                            
-                            <!--Adversiment-->
-                            
-                            <!--
                             <div class="widget">
+                                {% for adse in adses %}
+                                {% if adse.ad3 %}
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <img src="upload/banner_07.jpg" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>-->
+                                        <img src="{{adse.ads3.url}}" alt="" class="img-fluid">            
+                                    </div><!-- end banner-img --> 
+                                </div><!-- end banner -->
+                                {% endif %}
+                                {% endfor %}
+                            </div><!-- end widget -->
 
                             <div class="widget">
                                 <h2 class="widget-title">Trend Videos</h2>
@@ -337,7 +197,7 @@
                                     <div class="blog-box">
                                         <div class="post-media">
                                             <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_video_01.jpg' %}" alt="" class="img-fluid">
+                                                <img src="upload/tech_video_01.jpg" alt="" class="img-fluid">
                                                 <div class="hovereffect">
                                                     <span class="videohover"></span>
                                                 </div><!-- end hover -->
@@ -353,7 +213,7 @@
                                     <div class="blog-box">
                                         <div class="post-media">
                                             <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_video_02.jpg' %}" alt="" class="img-fluid">
+                                                <img src="upload/tech_video_02.jpg" alt="" class="img-fluid">
                                                 <div class="hovereffect">
                                                     <span class="videohover"></span>
                                                 </div><!-- end hover -->
@@ -369,7 +229,7 @@
                                     <div class="blog-box">
                                         <div class="post-media">
                                             <a href="tech-single.html" title="">
-                                                <img src="{% static 'upload/tech_video_03.jpg' %}" alt="" class="img-fluid">
+                                                <img src="upload/tech_video_03.jpg" alt="" class="img-fluid">
                                                 <div class="hovereffect">
                                                     <span class="videohover"></span>
                                                 </div><!-- end hover -->
@@ -388,7 +248,7 @@
                                     <div class="list-group">
                                         <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="{% static 'upload/tech_blog_08.jpg' %}" alt="" class="img-fluid float-left">
+                                                <img src="upload/tech_blog_08.jpg" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1">5 Beautiful buildings you need..</h5>
                                                 <small>12 Jan, 2016</small>
                                             </div>
@@ -404,7 +264,7 @@
 
                                         <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 last-item justify-content-between">
-                                                <img src="{% static 'upload/tech_blog_03.jpg' %}" alt="" class="img-fluid float-left">
+                                                <img src="upload/tech_blog_03.jpg" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1">Did you see the most beautiful..</h5>
                                                 <small>07 Jan, 2016</small>
                                             </div>
@@ -419,7 +279,7 @@
                                     <div class="list-group">
                                         <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="{% static 'upload/tech_blog_02.jpg' %}" alt="" class="img-fluid float-left">
+                                                <img src="upload/tech_blog_02.jpg" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1">Banana-chip chocolate cake recipe..</h5>
                                                 <span class="rating">
                                                     <i class="fa fa-star"></i>
@@ -433,7 +293,7 @@
 
                                         <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="{% static 'upload/tech_blog_03.jpg' %}" alt="" class="img-fluid float-left">
+                                                <img src="upload/tech_blog_03.jpg" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1">10 practical ways to choose organic..</h5>
                                                 <span class="rating">
                                                     <i class="fa fa-star"></i>
@@ -447,7 +307,7 @@
 
                                         <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 last-item justify-content-between">
-                                                <img src="{% static 'upload/tech_blog_07.jpg' %}" alt="" class="img-fluid float-left">
+                                                <img src="upload/tech_blog_07.jpg" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1">We are making homemade ravioli..</h5>
                                                 <span class="rating">
                                                     <i class="fa fa-star"></i>
@@ -496,19 +356,27 @@
                                 </div>
                             </div><!-- end widget -->
 
-
-                            <!--Adversiment-->
-                            <!--<div class="widget">
+                            <div class="widget">
+                                {% for adse in adses %}
+                                {% if adse.ads4 %}
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <img src="upload/banner_03.jpg" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                        <img src="{{adse.ads4.url}}" alt="" class="img-fluid">
+                                    </div><!-- end banner-img -->
+                                </div><!-- end banner -->
+                                {% endif %}
+                                {% endfor %}
+                            </div><!-- end widget -->
+                        </div><!-- end sidebar -->
+                    </div><!-- end col -->
+                    
+                    
+
+                    
+
+               
+                </div><!-- end row -->
+            </div><!-- end container -->
         </section>
 
 {% endblock %}

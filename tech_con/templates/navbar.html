@@ -42,6 +42,24 @@
                     </li>
                 </ul>
             </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    {% for adse in adses %}
+                    {% if adse.adsnavbar %}
+                    <div class="banner-spot clearfix">
+                        <div class="banner-img">
+                            
+                            <img src="{{adse.adsnavbar.url}}" alt="" class="img-fluid">
+                            
+                        </div><!-- end banner-img -->
+                    </div><!-- end banner -->
+                    {% endif %}
+                    <br>
+                    {% endfor %}
+                </div><!-- end col -->
+            </div><!-- end row -->
+
         </nav>
     </div> <!-- end container-fluid -->
 </header> <!-- end market-header -->

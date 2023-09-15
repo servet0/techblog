@@ -13,25 +13,25 @@
                                 <ol class="breadcrumb hidden-xs-down">
                                     <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
                                     <!--<li class="breadcrumb-item"><a href="#">Blog</a></li>-->
-                                    <li class="breadcrumb-item active">{{header_d.name}}</li>
+                                    <li class="breadcrumb-item active">{{blog_d.name}}</li>
                                 </ol>
 
                                 <!--<span class="color-orange"><a href="tech-category-01.html" title="">Technology</a></span>-->
 
-                                <h3>{{header_d.name}}</h3>
+                                <h3>{{blog_d.name}}</h3>
 
                                 <div class="blog-meta big-meta">
                                     <!--<small><a href="tech-single.html" title="">21 July, 2017</a></small>
                                     <small><a href="tech-author.html" title="">by Jessica</a></small>-->
-                                    <small><a href="#" title=""><i class="fa fa-eye"></i> {{header_d.view}}</a></small>
+                                    <small><a href="#" title=""><i class="fa fa-eye"></i> {{blog_d.view}}</a></small>
                                 </div><!-- end meta -->
 
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        {% if header_d.adversiment1 %}
+                                        {% if blog_d.adversiment1 %}
                                         <div class="banner-spot clearfix">
                                             <div class="banner-img">                                 
-                                                <img src="{{header_d.adversiment1.url}}" alt="" class="img-fluid">                                       
+                                                <img src="{{blog_d.adversiment1.url}}" alt="" class="img-fluid">                                       
                                             </div><!-- end banner-img -->
                                         </div><!-- end banner -->
                                         {% endif %}
@@ -48,15 +48,15 @@
                             </div><!-- end title -->
 
                             <div class="single-post-media">
-                                {% if header_d.image %}
-                                <img src="{{header_d.image.url}}" alt="" class="img-fluid">
+                                {% if blog_d.image %}
+                                <img src="{{blog_d.image.url}}" alt="" class="img-fluid">
                                 {% endif %}
                             </div><!-- end media -->
 
                             <div class="blog-content">  
                                 <div class="pp">
 
-                                    {{header_d.description|safe}}
+                                    {{blog_d.description|safe}}
 
                                 </div><!-- end pp -->
 
@@ -126,10 +126,10 @@
 
                             <div class="row">
                                 <div class="col-lg-12">
-                                    {% if header_d.adversiment2 %}
+                                    {% if blog_d.adversiment2 %}
                                     <div class="banner-spot clearfix">
                                         <div class="banner-img">                                 
-                                            <img src="{{header_d.adversiment2.url}}" alt="" class="img-fluid">                                       
+                                            <img src="{{blog_d.adversiment2.url}}" alt="" class="img-fluid">                                       
                                         </div><!-- end banner-img -->
                                     </div><!-- end banner -->
                                     {% endif %}
@@ -187,11 +187,11 @@
                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                         <div class="sidebar">
                             <div class="widget">
-                                {% if header_d.adversiment3 %}
+                                {% if blog_d.adversiment3 %}
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
                                         <!--Sayfaya özel reklam-->
-                                        <img src="{{header_d.adversiment3.url}}" alt="" class="img-fluid">
+                                        <img src="{{blog_d.adversiment3.url}}" alt="" class="img-fluid">
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
                                 {% endif %}
@@ -363,10 +363,10 @@
                             </div><!-- end widget -->
 
                             <div class="widget">
-                                {% if header_d.adversiment4 %}
+                                {% if blog_d.adversiment4 %}
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <img src="{{header_d.adversiment4.url}}" alt="" class="img-fluid">
+                                        <img src="{{blog_d.adversiment4.url}}" alt="" class="img-fluid">
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
                                 {% endif %}
