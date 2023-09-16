@@ -49,8 +49,8 @@
                     {% if adse.adsnavbar %}
                     <div class="banner-spot clearfix">
                         <div class="banner-img">
-                            
-                            <img src="{{adse.adsnavbar.url}}" alt="" class="img-fluid">
+                            {% if adse.urlnavbar %}
+                            <a href="{{adse.urlnavbar}}" target="_blank" rel="noopener noreferrer">{% endif %}<img src="{{adse.adsnavbar.url}}" alt="" class="img-fluid"></a>
                             
                         </div><!-- end banner-img -->
                     </div><!-- end banner -->

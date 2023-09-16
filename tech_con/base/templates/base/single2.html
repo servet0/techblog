@@ -31,7 +31,8 @@
                                         {% if header_d2.adversiment1 %}
                                         <div class="banner-spot clearfix">
                                             <div class="banner-img">                                 
-                                                <img src="{{header_d2.adversiment1.url}}" alt="" class="img-fluid">                                       
+                                                {% if header_d2.urladver1 %}                                       
+                                                <a href="{{header_d2.urladver1}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{header_d2.adversiment1.url}}" alt="" class="img-fluid"></a>
                                             </div><!-- end banner-img -->
                                         </div><!-- end banner -->
                                         {% endif %}
@@ -129,7 +130,8 @@
                                     {% if header_d2.adversiment2 %}
                                     <div class="banner-spot clearfix">
                                         <div class="banner-img">                                 
-                                            <img src="{{header_d2.adversiment2.url}}" alt="" class="img-fluid">                                       
+                                            {% if header_d2.urladver2 %}                                       
+                                            <a href="{{header_d2.urladver2}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{header_d2.adversiment2.url}}" alt="" class="img-fluid"></a>
                                         </div><!-- end banner-img -->
                                     </div><!-- end banner -->
                                     {% endif %}
@@ -191,7 +193,8 @@
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
                                         <!--Sayfaya özel reklam-->
-                                        <img src="{{header_d2.adversiment3.url}}" alt="" class="img-fluid">
+                                        {% if header_d2.urladver3 %}
+                                        <a href="{{header_d2.urladver3}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{header_d2.adversiment3.url}}" alt="" class="img-fluid"></a>
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
                                 {% endif %}
@@ -366,7 +369,8 @@
                                 {% if header_d2.adversiment4 %}
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <img src="{{header_d2.adversiment4.url}}" alt="" class="img-fluid">
+                                        {% if header_d2.urladver4 %}
+                                        <a href="{{header_d2.urladver4}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{header_d2.adversiment4.url}}" alt="" class="img-fluid"></a>
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
                                 {% endif %}

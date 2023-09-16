@@ -11,8 +11,8 @@
                         {% if adse.adsheader %}
                         <div class="banner-spot clearfix">
                             <div class="banner-img">
-                                
-                                <img src="{{adse.adsheader.url}}" alt="" class="img-fluid">
+                                {% if adse.urlheader %}
+                                <a href="{{adse.urlheader}}" target="_blank" rel="noopener noreferrer">{% endif %}<img src="{{adse.adsheader.url}}" alt="" class="img-fluid"></a>
                                 
                             </div><!-- end banner-img -->
                         </div><!-- end banner -->
@@ -86,8 +86,8 @@
                                 {% if adse.ads %}
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        
-                                        <img src="{{adse.ads.url}}" alt="" class="img-fluid">
+                                        {% if adse.urlads %}
+                                        <a href="{{adse.urlads}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{adse.ads.url}}" alt="" class="img-fluid"></a>
                                         
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
@@ -164,8 +164,8 @@
                                 {% if adse.ads2 %}
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        
-                                        <img src="{{adse.ads2.url}}" alt="" class="img-fluid">
+                                        {% if adse.urlads2 %}
+                                        <a href="{{adse.urlads2}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{adse.ads2.url}}" alt="" class="img-fluid"></a>
                                         
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
@@ -181,10 +181,11 @@
                         <div class="sidebar">
                             <div class="widget">
                                 {% for adse in adses %}
-                                {% if adse.ad3 %}
+                                {% if adse.ads3 %}
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <img src="{{adse.ads3.url}}" alt="" class="img-fluid">            
+                                        {% if adse.urlads3 %}
+                                        <a href="{{adse.urlads3}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{adse.ads3.url}}" alt="" class="img-fluid"> </a>           
                                     </div><!-- end banner-img --> 
                                 </div><!-- end banner -->
                                 {% endif %}
@@ -361,7 +362,8 @@
                                 {% if adse.ads4 %}
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <img src="{{adse.ads4.url}}" alt="" class="img-fluid">
+                                        {% if adse.urlads4 %}
+                                        <a href="{{adse.urlads4}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{adse.ads4.url}}" alt="" class="img-fluid"></a>
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
                                 {% endif %}
