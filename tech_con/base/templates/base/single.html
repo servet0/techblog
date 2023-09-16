@@ -38,6 +38,23 @@
                                         {% endif %}
                                     </div><!-- end col -->
                                 </div><!-- end row -->
+                                
+                                <br>
+                                
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        {% for allsingle in allsingles %}
+                                        {% if allsingle.ads1 %}
+                                        <div class="banner-spot clearfix">
+                                            <div class="banner-img">                                 
+                                                {% if allsingle.urlads1 %}
+                                                <a href="{{allsingle.urlads1}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{allsingle.ads1.url}}" alt="" class="img-fluid"></a>
+                                            </div><!-- end banner-img -->
+                                        </div><!-- end banner -->
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
 
                                 <!--<div class="post-sharing">
                                     <ul class="list-inline">
@@ -138,6 +155,23 @@
                                 </div><!-- end col -->
                             </div><!-- end row -->
 
+                            <br>
+                                
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    {% for allsingle in allsingles %}
+                                    {% if allsingle.ads2 %}
+                                    <div class="banner-spot clearfix">
+                                        <div class="banner-img">                                 
+                                            {% if allsingle.urlads2 %}
+                                            <a href="{{allsingle.urlads2}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{allsingle.ads2.url}}" alt="" class="img-fluid"></a>
+                                        </div><!-- end banner-img -->
+                                    </div><!-- end banner -->
+                                    {% endif %}
+                                    {% endfor %}
+                                </div><!-- end col -->
+                            </div><!-- end row -->    
+
                             <hr class="invis1"> 
                             
                             <div class="custombox clearfix">
@@ -199,6 +233,23 @@
                                 </div><!-- end banner -->
                                 {% endif %}
                             </div><!-- end widget -->
+
+                            <br>
+
+                            <div class="widget">
+                                {% for allsingle in allsingles %}
+                                {% if allsingle.ads3 %}
+                                <div class="banner-spot clearfix">
+                                    <div class="banner-img">
+                                        <!--Sayfaya özel reklam-->
+                                        {% if allsingle.urlads3 %}
+                                        <a href="{{allsingle.urlads3}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{allsingle.ads3.url}}" alt="" class="img-fluid"></a>
+                                    </div><!-- end banner-img -->
+                                </div><!-- end banner -->
+                                {% endif %}
+                                {% endfor %}
+                            </div><!-- end widget -->
+
 
                             <div class="widget">
                                 <h2 class="widget-title">Trend Videos</h2>
@@ -375,6 +426,21 @@
                                 </div><!-- end banner -->
                                 {% endif %}
                             </div><!-- end widget -->
+
+                            <div class="widget">
+                                {% for allsingle in allsingles %}
+                                {% if allsingle.ads4 %}
+                                <div class="banner-spot clearfix">
+                                    <div class="banner-img">
+                                        <!--Sayfaya özel reklam-->
+                                        {% if allsingle.urlads4 %}
+                                        <a href="{{allsingle.urlads4}}" target="_blank" rel="noopener noreferrer"> {% endif %} <img src="{{allsingle.ads4.url}}" alt="" class="img-fluid"></a>
+                                    </div><!-- end banner-img -->
+                                </div><!-- end banner -->
+                                {% endif %}
+                                {% endfor %}
+                            </div><!-- end widget -->
+
                         </div><!-- end sidebar -->
                     </div><!-- end col -->
 

@@ -85,5 +85,17 @@ class Blog(models.Model):
     def __str__(self): 
         return self.name
     
+class AllSingleAdversiment(models.Model):
+    name = models.TextField(null=True, blank=True)    
+    ads1 = models.ImageField(upload_to='ads', null=True, blank=True)
+    urlads1 = models.URLField(null=True, blank=True)
+    ads2 = models.ImageField(upload_to='ads', null=True, blank=True)
+    urlads2 = models.URLField(null=True, blank=True)
+    ads3 = models.ImageField(upload_to='ads', null=True, blank=True)
+    urlads3 = models.URLField(null=True, blank=True)
+    ads4 = models.ImageField(upload_to='ads', null=True, blank=True)
+    urlads4 = models.URLField(null=True, blank=True)
+    date = models.DateTimeField(auto_now=True)
+    available = models.BooleanField(default=True)
 
 # Create your models here.
