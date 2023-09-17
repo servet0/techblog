@@ -118,6 +118,48 @@ a {
     text-decoration: none !important;
 }
 
+/* Pagination
+*********************************/
+/* Pagination Container */
+.page-number {
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Yatayda ortala */
+    align-items: center; /* Dikeyde ortala */
+    
+}
+
+/* Pagination Links */
+.pagination a {
+    color: #007BFF;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Current Page */
+.current {
+    font-weight: bold;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Disabled Links */
+.pagination .disabled {
+    pointer-events: none;
+    color: #ccc;
+}
+
+
+
+
+
 .blockquote {
     border: 1px solid #edeff2;
     background: #fff none repeat scroll 0 0;

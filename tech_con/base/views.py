@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Logo, Header, Header2, MainAdversiment, Blog, AllSingleAdversiment
+from django.core.paginator import Paginator
 
 def home(request):
     logos = Logo.objects.all()
@@ -8,7 +9,12 @@ def home(request):
     adses = MainAdversiment.objects.all().order_by('-date')
     blogs = Blog.objects.all().order_by('-date')
 
-    context = {'logos':logos, 'headers':headers, 'header2s':header2s, 'adses':adses, 'blogs':blogs}
+    paginator = Paginator(blogs, 12) 
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    context = {'logos':logos, 'headers':headers, 'header2s':header2s, 'adses':adses, 'blogs':blogs, 'page_obj':page_obj}
 
     return render(request, 'base/home.html', context)
 
@@ -35,6 +41,9 @@ def blog_detail(request, blog_name):
     logos = Logo.objects.all()
     allsingles = AllSingleAdversiment.objects.all().order_by('-date')
     blog_d = Blog.objects.get( name=blog_name)
+
+    
+
     
     context = {'blog_d':blog_d, 'logos':logos, 'allsingles': allsingles}
 

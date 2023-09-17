@@ -70,6 +70,7 @@ class Blog(models.Model):
     name = models.CharField(max_length=1000, null=True, blank=True)
     description = RichTextField(null=True, blank=True)
     adversimenthome = models.ImageField(upload_to='ads', null=True, blank=True)
+    urladverhome = models.URLField(null=True, blank=True)
     adversiment1 = models.ImageField(upload_to='ads', null=True, blank=True)
     urladver1 = models.URLField(null=True, blank=True)
     adversiment2 = models.ImageField(upload_to='ads', null=True, blank=True)
