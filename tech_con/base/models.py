@@ -99,4 +99,15 @@ class AllSingleAdversiment(models.Model):
     date = models.DateTimeField(auto_now=True)
     available = models.BooleanField(default=True)
 
+    def __str__(self): 
+        return self.name
+
+class Suggestion(models.Model):
+    title = models.CharField(max_length=100, null=True)
+    suggest = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self):
+        return self.title
+
 # Create your models here.
