@@ -65,13 +65,13 @@
 
         <footer class="footer">
             <div class="container">
+                
+
+                {% for footer in footers %}
                 <div class="row">
-                    <div class="col-lg-7">
-                        <div class="widget">
-                            <div class="footer-text text-left">
-                                {% for footer in footers %}
+                    <div class="col-md-12 text-center">
                                 {% if footer.image %}
-                                <a href="{% url 'home' %}"><img src="{{ footer.image.url }}" alt="" class="img-fluid">{% else %} <span class="big-text">{{footer.name}}</span> {% endif %} </a>
+                                <a href="{% url 'home' %}"><img src="{{ footer.image.url }}" alt="" class="img-fluid">{% else %} <span class="big-text">{% if footer.name %}{{footer.name}} {% endif %}</span> {% endif %} </a>
                                 {% if footer.description %}
                                 <p>{{footer.description|safe}} {% endif %} </p>
                                 <div class="social"> 
@@ -91,45 +91,11 @@
                                     <a href="{{footer.pinterest}}" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
                                     {% endif %}
                                 </div>
-
-                                <hr class="invis">
-                                {% endfor %}
-
-                            <!--<div class="newsletter-widget text-left">
-                                    <form class="form-inline">
-                                        <input type="text" class="form-control" placeholder="Enter your email address">
-                                        <button type="submit" class="btn btn-primary">SUBMIT</button>
-                                    </form>
-                                </div>-->
-
-                            </div><!-- end footer-text -->
-                        </div><!-- end widget -->
-                    </div><!-- end col -->
-
-                   
-
-                    <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
-                        <div class="widget">
-                            <h2 class="widget-title">Copyrights</h2>
-                            <div class="link-widget">
-                                <ul>
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">Advertising</a></li>
-                                    <li><a href="#">Write for us</a></li>
-                                    <li><a href="#">Trademark</a></li>
-                                    <li><a href="#">License & Help</a></li>
-                                </ul>
-                            </div><!-- end link-widget -->
-                        </div><!-- end widget -->
-                    </div><!-- end col -->
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <br>
-                        <div class="copyright">&copy; Tech Blog. Design: <a href="http://html.design">HTML Design</a>.</div>
+                               
+                        <div class="copyright">&copy; {{footer.year}} {{footer.copyright_name}}| <a href="{% url 'policy' %}" > Privacy Policy </a>.</div>
                     </div>
                 </div>
+                {% endfor %}
             </div><!-- end container -->
         </footer><!-- end footer -->
 

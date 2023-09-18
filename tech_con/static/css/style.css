@@ -129,6 +129,12 @@ a {
     
 }
 
+.footermiddle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 /* Pagination Links */
 .pagination a {
     color: #007BFF;

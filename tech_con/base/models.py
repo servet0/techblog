@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from datetime import datetime
 
 class Logo(models.Model):
     tittle = models.CharField(max_length=100, null=True, blank=True)
@@ -124,7 +125,12 @@ class Footer(models.Model):
     google = models.URLField(max_length=100, null=True, blank=True)
     pinterest = models.URLField(max_length=100, null=True, blank=True)
     youtube = models.URLField(max_length=100, null=True, blank=True)
+    copyright_name = models.CharField(max_length=1000, null=True, blank=True)
+    policy = RichTextField(null=True, blank=True)
+    year = models.PositiveIntegerField(default=datetime.now().year)
     date = models.DateTimeField(auto_now=True)
     available = models.BooleanField(default=True)
+
+
 
 # Create your models here.

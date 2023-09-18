@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+
+<section class="section">
+<div class="container">
+{% for footer in footers %}
+<p>{{footer.policy|safe}}</p>
+{% endfor %}
+</div>
+
+</section>
+
+{% endblock %}

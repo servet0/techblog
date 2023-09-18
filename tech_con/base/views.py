@@ -61,5 +61,14 @@ def blog_detail(request, blog_name):
 
     return render(request, 'base/singleblog.html', context)
 
+def privacy(request):
+    logos = Logo.objects.all()
+    footers = Footer.objects.all().order_by('-date')
+
+    context = {'logos':logos, 'footers':footers}
+
+    return render(request, 'base/policy.html', context)
+
+
 
 # Create your views here.
