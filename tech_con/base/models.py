@@ -6,6 +6,8 @@ class Logo(models.Model):
     image = models.ImageField(upload_to='logo', null=True, blank=True)
     minilogo = models.ImageField(upload_to='minilogo', null=True, blank=True)
     name = models.CharField(max_length=1000, null=True, blank=True)
+    date = models.DateTimeField(auto_now=True)
+    available = models.BooleanField(default=True)
 
 class Header(models.Model):
     image = models.ImageField(upload_to='blog', null=True, blank=True)
@@ -106,8 +108,23 @@ class Suggestion(models.Model):
     title = models.CharField(max_length=100, null=True)
     suggest = models.ForeignKey(Blog, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True, null=True)
+    available = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
+    
+class Footer(models.Model):
+    tittle = models.CharField(max_length=100, null=True, blank=True)
+    image = models.ImageField(upload_to='logo', null=True, blank=True)
+    description = RichTextField(null=True, blank=True)
+    name = models.CharField(max_length=1000, null=True, blank=True)
+    facebook = models.URLField(max_length=100, null=True, blank=True)
+    twitter = models.URLField(max_length=100, null=True, blank=True)
+    instagram = models.URLField(max_length=100, null=True, blank=True)
+    google = models.URLField(max_length=100, null=True, blank=True)
+    pinterest = models.URLField(max_length=100, null=True, blank=True)
+    youtube = models.URLField(max_length=100, null=True, blank=True)
+    date = models.DateTimeField(auto_now=True)
+    available = models.BooleanField(default=True)
 
 # Create your models here.

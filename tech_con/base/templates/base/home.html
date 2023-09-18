@@ -231,36 +231,42 @@
 
                             <div class="widget">
                                 <h2 class="widget-title">Follow Us</h2>
-
+                                {% for footer in footers %}
                                 <div class="row text-center">
+                                    {% if footer.facebook %} 
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button facebook-button">
+                                        <a href="{{footer.facebook}}" class="social-button facebook-button" target="_blank" rel="noopener noreferrer">
                                             <i class="fa fa-facebook"></i>
-                                            <p>27k</p>
+                                            
                                         </a>
                                     </div>
-
+                                    {% endif %}
+                                    {% if footer.twitter %}
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button twitter-button">
+                                        <a href="{{footer.twitter}}" class="social-button twitter-button" target="_blank" rel="noopener noreferrer">
                                             <i class="fa fa-twitter"></i>
-                                            <p>98k</p>
+                                            
                                         </a>
                                     </div>
-
+                                    {% endif %}
+                                    {% if footer.instagram %}
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button google-button">
-                                            <i class="fa fa-google-plus"></i>
-                                            <p>17k</p>
+                                        <a href="{{footer.instagram}}" class="social-button google-button" target="_blank" rel="noopener noreferrer">
+                                            <i class="fa fa-instagram"></i>
+                                            
                                         </a>
                                     </div>
-
+                                    {% endif %}
+                                    {% if footer.youtube %}
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button youtube-button">
+                                        <a href="{{footer.youtube}}" class="social-button youtube-button" target="_blank" rel="noopener noreferrer">
                                             <i class="fa fa-youtube"></i>
-                                            <p>22k</p>
+                                            
                                         </a>
                                     </div>
+                                    {% endif %}
                                 </div>
+                                {% endfor %}
                             </div><!-- end widget -->
 
                             <div class="widget">
