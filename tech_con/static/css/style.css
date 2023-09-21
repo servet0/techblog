@@ -134,6 +134,53 @@ a {
     margin-right: auto;
 }
 
+/* Form elementlerine genel stil */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+/* İnput ve textarea stil */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Gönder düğmesi stil */
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* FontAwesome ikon stil (i.fa) */
+i.fa {
+    margin-left: 5px;
+}
+
+/* Formun genel stil */
+.form-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Hata mesajları için stil (isteğe bağlı) */
+.error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
 
 /* Pagination Links */
 .pagination a {

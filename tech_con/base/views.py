@@ -4,6 +4,7 @@ from django.core.paginator import Paginator
 from django.core.mail import send_mail
 from .forms import ContactForm
 
+
 def home(request):
     logos = Logo.objects.all()
     headers = Header.objects.all().order_by('-date')
@@ -59,8 +60,6 @@ def blog_detail(request, blog_name):
     footers = Footer.objects.all().order_by('-date')
     names = Name.objects.first()
     
-
-    
     context = {'blog_d':blog_d, 'logos':logos, 'allsingles': allsingles, 'suggests':suggests, 'alsolikes':alsolikes, 'footers':footers, 'names':names}
 
     return render(request, 'base/singleblog.html', context)
@@ -91,6 +90,10 @@ def contact(request):
     context = {'logos':logos, 'footers':footers, 'names':names, 'form':form, 'abouts':abouts}
 
     return render(request, 'base/contact.html', context)
+
+
+
+
 
 
 # Create your views here.

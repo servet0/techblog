@@ -85,6 +85,7 @@ class Blog(models.Model):
     view = models.IntegerField(null=True, blank=True)
     date = models.DateTimeField(auto_now=True)
     available = models.BooleanField(default=True)
+    
 
     def __str__(self): 
         return self.name
@@ -141,6 +142,12 @@ class Name(models.Model):
     privacy = models.TextField(null=True, blank=True)
     alsolike = models.TextField(null=True, blank=True)
     page = models.TextField(null=True, blank=True)
+    contactname = models.TextField(null=True, blank=True)
+    contactemail = models.TextField(null=True, blank=True)
+    contactphone = models.TextField(null=True, blank=True)
+    contactsubject = models.TextField(null=True, blank=True)
+    contactmessage = models.TextField(null=True, blank=True)
+    contactsend = models.TextField(null=True, blank=True)
     date = models.DateTimeField(auto_now=True)
     available = models.BooleanField(default=True)
 
