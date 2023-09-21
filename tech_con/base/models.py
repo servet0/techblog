@@ -131,6 +131,38 @@ class Footer(models.Model):
     date = models.DateTimeField(auto_now=True)
     available = models.BooleanField(default=True)
 
+class Name(models.Model):
+    tittle_main = models.TextField(null=True, blank=True)
+    home = models.TextField(null=True, blank=True)
+    contact = models.TextField(null=True, blank=True)
+    news = models.TextField(null=True, blank=True)
+    popular = models.TextField(null=True, blank=True)
+    follow = models.TextField(null=True, blank=True)
+    privacy = models.TextField(null=True, blank=True)
+    alsolike = models.TextField(null=True, blank=True)
+    page = models.TextField(null=True, blank=True)
+    date = models.DateTimeField(auto_now=True)
+    available = models.BooleanField(default=True)
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=21)
+    subject = models.CharField(max_length=300)
+    message = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.subject
+
+class About(models.Model):
+    about = RichTextField() 
+    name = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    date = models.DateTimeField(auto_now=True)
+    available = models.BooleanField(default=True)
+
+
 
 
 # Create your models here.

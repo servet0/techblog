@@ -102,7 +102,7 @@
                             <div class="blog-grid-system">
 
                                 <div class="blog-top clearfix">
-                                    <h4 class="pull-left">Recent News <i class="fa fa-rss"></i> </h4>
+                                    <h4 class="pull-left">{{names.news}} <i class="fa fa-rss"></i> </h4>
                                 </div><!-- end blog-top -->
 
                                 <div class="row">
@@ -157,7 +157,7 @@
                                   {% endif %}
                           
                                   <span class="current">
-                                      Sayfa {{ page_obj.number}}
+                                    {% if names.page %} {{names.page}} {% endif %} {{ page_obj.number}}
                                   </span>
                           
                                   {% if page_obj.has_next %}
@@ -206,7 +206,7 @@
                             </div><!-- end widget -->
 
                             <div class="widget">
-                                <h2 class="widget-title">Popular</h2>
+                                <h2 class="widget-title">{{names.popular}}</h2>
                                 <div class="trend-videos">
                                     {% for suggesti in suggests %}
                                     <hr class="invis">
@@ -230,7 +230,7 @@
 
 
                             <div class="widget">
-                                <h2 class="widget-title">Follow Us</h2>
+                                <h2 class="widget-title">{{names.follow}}</h2>
                                 {% for footer in footers %}
                                 <div class="row text-center">
                                     {% if footer.facebook %} 

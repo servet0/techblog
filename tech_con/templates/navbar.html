@@ -20,14 +20,14 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link" href="{% url 'home' %}">{{names.home}}</a>
                     </li>
 
                    <!--news, gadgets, rewies-->
                    
                 
                     <li class="nav-item">
-                        <a class="nav-link" href="tech-contact.html">Contact Us</a>
+                        <a class="nav-link" href="{% url 'contact' %}">{{names.contact}}</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mr-2">

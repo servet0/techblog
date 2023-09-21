@@ -7,4 +7,5 @@ urlpatterns = [
     path('haber/<str:pk>', views.header_detail2, name = 'single2'),   
     path('blog/<str:blog_name>', views.blog_detail, name = 'singleblog'),   
     path('privacy-policy/', views.privacy, name = 'policy'),   
+    path('contact/', views.contact, name = 'contact'),   
 ]

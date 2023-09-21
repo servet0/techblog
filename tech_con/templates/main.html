@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Site Metas -->
-    <title>Tech Blog - Stylish Magazine Blog Template</title>
+    <title>{{names.tittle_main}}</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -44,10 +44,7 @@
     <!-- Version Tech CSS for this template -->
     <link href="{% static 'css/version/tech.css' %}" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    
 
 </head>
 <body>
@@ -92,7 +89,7 @@
                                     {% endif %}
                                 </div>
                                
-                        <div class="copyright">&copy; {{footer.year}} {{footer.copyright_name}}| <a href="{% url 'policy' %}" > Privacy Policy </a>.</div>
+                        <div class="copyright">&copy; {{footer.year}} {{footer.copyright_name}}| <a href="{% url 'policy' %}" > {{names.privacy}} </a></div>
                     </div>
                 </div>
                 {% endfor %}
